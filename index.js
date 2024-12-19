@@ -9,9 +9,12 @@ const httpServer = createServer(app);
 
 const io = new Server(httpServer,{
     cors: {
-        origin: "*",
-        methods: ["*"],
+        origin: 'http://127.0.0.1:5500/quiz_game/client/', // Allow requests from this origin
+        methods: ['GET', 'POST'],        // Allow these methods
+        allowedHeaders: ['Content-Type'],
+        credentials: true                // Allow credentials (if required)
       }
+    
 });
 
 app.get('/',(req,res)=> {
