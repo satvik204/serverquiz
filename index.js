@@ -18,8 +18,7 @@ const io = new Server(httpServer,{
 });
 
 app.get('/',(req,res)=> {
-
-
+    res.send("<h1>Working</h1>")
 })
 let player = [];
 let TotalPlayers = 0;
